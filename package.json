@@ -1,0 +1,38 @@
+{
+  "name": "progsidequest_pinto_rasulo",
+  "version": "1.0.0",
+  "description": "Progetto di Ingegneria Software e Teconologie Web di Emilio Pinto e Matteo Antonio Rasulo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-frontend": "nodemon ./frontend/index.js",
+    "start-backend": "nodemon ./backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emilio643/progsidequest_pinto_rasulo.git"
+  },
+  "author": "Emilio Pinto, Matteo Antonio Rasulo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emilio643/progsidequest_pinto_rasulo/issues"
+  },
+  "homepage": "https://github.com/Emilio643/progsidequest_pinto_rasulo#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.4",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.5.0",
+    "nodemon": "^3.0.2",
+    "pug": "^3.0.4",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^5.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
