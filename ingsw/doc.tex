@@ -1,0 +1,216 @@
+\documentclass[italian,11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{array,tabularx}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+% Scheda vuota per un requisito funzionale. Duplicare e rinumerare se necessario.
+\newcommand{\schedaRequisito}[1]{
+\subsubsection{RE#1 --}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4cm}|X|}\hline
+\multicolumn{2}{|c|}{\textbf{Utenti per funzionalità}}\\\hline
+\textbf{Utente autenticato} & \textbf{Utente non autenticato}\\\hline
+ & \\\hline
+\end{tabularx}
+\end{table}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4cm}|X|}\hline
+Funzione & \\\hline
+Descrizione & \\\hline
+Input & \\\hline
+Fonte & \\\hline
+Output & \\\hline
+Azione & \\\hline
+Precondizione & \\\hline
+Effetti collaterali & \\\hline
+Use case & \\\hline
+\end{tabularx}
+\end{table}
+}
+
+\title{Specifica dei Requisiti}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione}
+\subsection{Scopo}
+
+\subsection{Campo di applicazione}
+
+\subsection{Definizioni (Glossario)}
+
+\subsection{Riferimenti}
+
+\newpage
+\section{Descrizione generale}
+\subsection{Prospettiva del prodotto}
+
+\subsection{Funzionalità del prodotto}
+
+\subsection{Attori del sistema}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{3.5cm}|X|X|}\hline
+\multicolumn{3}{|c|}{\textbf{}}\\\hline
+\textbf{Descrizione} & \textbf{Esperienza e competenze tecniche} & \textbf{Principali interazioni con il sistema}\\\hline
+ & & \\\hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{3.5cm}|X|X|}\hline
+\multicolumn{3}{|c|}{\textbf{}}\\\hline
+\textbf{Descrizione} & \textbf{Esperienza e competenze tecniche} & \textbf{Principali interazioni con il sistema}\\\hline
+ & & \\\hline
+\end{tabularx}
+\end{table}
+
+\newpage
+\section{Requisiti specifici}
+\subsection{Requisiti funzionali}
+\schedaRequisito{01}
+\schedaRequisito{02}
+\schedaRequisito{03}
+\schedaRequisito{04}
+\schedaRequisito{05}
+\schedaRequisito{06}
+\schedaRequisito{07}
+\schedaRequisito{08}
+\schedaRequisito{09}
+\schedaRequisito{10}
+\schedaRequisito{11}
+\schedaRequisito{12}
+\schedaRequisito{13}
+\schedaRequisito{14}
+\schedaRequisito{15}
+
+\newpage
+\subsection{Modellazione dei casi d'uso tramite Use Case Diagram}
+\subsubsection{Use Case Diagram}
+
+\subsubsection{Use Case Diagram parziale 1}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\subsubsection{Use Case Diagram parziale 2}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\subsubsection{Use Case Diagram parziale 3}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\subsubsection{Use Case Diagram parziale 4}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\subsubsection{Use Case Diagram parziale 5}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\subsubsection{Use Case Diagram parziale 6}
+\begin{itemize}
+\item
+\end{itemize}
+\begin{figure}[H]\centering
+\fbox{\parbox[c][3cm][c]{0.75\textwidth}{\centering}}
+\caption{}
+\end{figure}
+
+\newpage
+\subsection{Requisiti non funzionali}
+\subsubsection{RNF01 -- Sicurezza}
+
+\subsubsection{RNF02 -- Affidabilità}
+
+\subsubsection{RNF03 -- Prestazioni}
+
+\subsubsection{RNF04 -- Usabilità}
+
+\subsubsection{RNF05 -- Scalabilità}
+
+\subsubsection{RNF06 -- Portabilità e indipendenza tra componenti}
+
+\subsubsection{RNF07 -- Manutenibilità}
+
+\newpage
+\subsection{Formalizzazione di casi d'uso significativi}
+\subsubsection{Tabella di Cockburn 1}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{4cm}|X|}\hline
+\textbf{Use case} & \\\hline
+Goal in context & \\\hline
+Preconditions & \\\hline
+Success end condition & \\\hline
+Failed end condition & \\\hline
+Trigger & \\\hline
+Main scenario & \\\hline
+Extensions & \\\hline
+\end{tabularx}
+\end{table}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{1.5cm}|X|X|}\hline
+\textbf{Step} & \textbf{Attore} & \textbf{Risposta del sistema}\\\hline
+ & & \\\hline
+ & & \\\hline
+ & & \\\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Tabella di Cockburn 2}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{4cm}|X|}\hline
+\textbf{Use case} & \\\hline
+Goal in context & \\\hline
+Preconditions & \\\hline
+Success end condition & \\\hline
+Failed end condition & \\\hline
+Trigger & \\\hline
+Main scenario & \\\hline
+Extensions & \\\hline
+\end{tabularx}
+\end{table}
+\begin{table}[H]\centering
+\begin{tabularx}{\textwidth}{|p{1.5cm}|X|X|}\hline
+\textbf{Step} & \textbf{Attore} & \textbf{Risposta del sistema}\\\hline
+ & & \\\hline
+ & & \\\hline
+ & & \\\hline
+\end{tabularx}
+\end{table}
+
+\end{document}
