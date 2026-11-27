@@ -2,4 +2,6 @@
 - Le missioni possono avere coordinate specifiche, oppure no => alcune missioni sono slegate da luoghi specifici, mentre altre basta un'area in cui sono valide.
 - Sono applicabili filtri di ricerca per le missioni: "scaduta/non scaduta", in base ai badge, parole chiave.
 - Se una missione è "segreta a tempo" gli obiettivi sono oscurati.
-- 
+- Le missioni hanno un campo "stato" nel database (che si trova nella tabella missioni) che indica se la missione è valida ovvero se è stata invalidata da un admin o è stato bannato l'account e invalidato tutte le missioni create; gli stati che assume questo campo sono: PUBBLICATA, RITIRATA, BOZZA, INVALIDATA, il conteggio dei punti deve essere ricalcolato nel caso una missione completata diventi ritirata (per fare ciò si potrebbe creare una funzione che va a ricalcolare i punti solo di chi ha partecipato che scatta nel momento in cui si elimina la missione o l'account e quindi tutte le missioni che ha creato). In caso venga eliminata quando l'avanzamento della missione nel campo apposito in partecipa è IN_CORSO viene notificato all'utente e lo stato passa ad ANNULLATA. IN CASO di annullamento di missioni accidentale i punti rimossi dagli utenti che l'hanno completata non verranno restituiti e la missione non avrà più visibilità a chi l'ha creata.
+- Il ban è logico tramite un campo apposito nella tabella utenti, questo evita problemi di coerenza di dati o eliminazioni vietate per vincoli di chiavi esterne.
+- Di default l'avatar è uno di base
