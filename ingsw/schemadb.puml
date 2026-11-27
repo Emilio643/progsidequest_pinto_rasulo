@@ -1,0 +1,125 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam entity {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+  ArrowColor #475569
+  FontName Arial
+}
+
+entity "UTENTE" as utente {
+  * id_utente : INT <<PK>>
+  --
+  * username : VARCHAR(20) <<UNIQUE>>
+  * email : VARCHAR(255) <<UNIQUE>>
+  * password : VARCHAR(255)
+  * nome : VARCHAR(50)
+  * cognome : VARCHAR(50)
+  bio : VARCHAR(300)
+  avatar : VARCHAR(255)
+  * punti : INT
+  * is_admin : BOOLEAN
+  * is_banned : BOOLEAN
+}
+
+entity "NOTIFICHE" as notifiche {
+  * id_notifica : INT <<PK>>
+  --
+  * id_utente : INT <<FK>>
+  * testo : VARCHAR(500)
+  * data_ora : DATETIME
+}
+
+entity "CATEGORIA" as categoria {
+  * nome : VARCHAR(50) <<PK>>
+}
+
+entity "MISSIONI" as missioni {
+  * id_missione : INT <<PK>>
+  --
+  * id_autore : INT <<FK>>
+  * categoria_nome : VARCHAR(50) <<FK>>
+  * titolo : VARCHAR(100)
+  * descrizione : TEXT
+  copertina : VARCHAR(255)
+  coordinate_luogo : VARCHAR(100)
+  * modalita : ENUM
+  durata_missione : INT
+  * stato : ENUM
+  * data_creazione : DATETIME
+  * ripetibile : BOOLEAN
+}
+
+entity "OBIETTIVI" as obiettivi {
+  * id_obiettivo : INT <<PK>>
+  --
+  * id_missione : INT <<FK>>
+  * nome : VARCHAR(100)
+  * descrizione : TEXT
+  * punteggio : INT
+  * richiede_testo : BOOLEAN
+  * richiede_foto : BOOLEAN
+}
+
+entity "PARTECIPAZIONE" as partecipazione {
+  * id_partecipazione : INT <<PK>>
+  --
+  * id_utente : INT <<FK>>
+  * id_missione : INT <<FK>>
+  * data_inizio : DATETIME
+  data_scadenza_timer : DATETIME
+  data_fine : DATETIME
+  * avanzamento : ENUM
+  esito : ENUM
+}
+
+entity "PROGRESSO_OBIETTIVO" as progresso {
+  * id_partecipazione : INT <<PK, FK>>
+  * id_obiettivo : INT <<PK, FK>>
+  --
+  * completato : BOOLEAN
+  prova_testo : TEXT
+  prova_foto : VARCHAR(255)
+  data_completamento : DATETIME
+}
+
+entity "BADGE" as badge {
+  * id_badge : INT <<PK>>
+  --
+  * nome : VARCHAR(100) <<UNIQUE>>
+  * descrizione : VARCHAR(300)
+  foto : VARCHAR(255)
+}
+
+entity "UTENTE_BADGE" as utente_badge {
+  * id_utente : INT <<PK, FK>>
+  * id_badge : INT <<PK, FK>>
+  --
+  * data_ottenimento : DATETIME
+}
+
+entity "MISSIONE_CONDIZIONE_BADGE" as missione_badge {
+  * id_missione : INT <<PK, FK>>
+  * id_badge : INT <<PK, FK>>
+}
+
+' --- RELAZIONI ---
+utente "1" -- "0..N" notifiche : riceve
+utente "1" -- "0..N" missioni : crea
+categoria "1" -- "0..N" missioni : classifica
+missioni "1" -- "1..N" obiettivi : contiene
+
+utente "1" -- "0..N" partecipazione : effettua
+missioni "1" -- "0..N" partecipazione : riguarda
+
+partecipazione "1" -- "1..N" progresso : traccia
+obiettivi "1" -- "0..N" progresso : svolto in
+
+utente "1" -- "0..N" utente_badge : possiede
+badge "1" -- "0..N" utente_badge : assegnato a
+
+missioni "1" -- "0..N" missione_badge : richiede
+badge "1" -- "0..N" missione_badge : prerequisito di
+@enduml
